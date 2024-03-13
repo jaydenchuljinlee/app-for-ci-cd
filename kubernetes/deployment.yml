@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: django-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: my-app
+      app: django-app
   template:
     metadata:
       labels:
-        app: my-app
+        app: django-app
     spec:
       containers:
-      - name: my-app
+      - name: django-app
         image: ironjin92/my-registry:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
       imagePullSecrets:
-        - name: docker-registry
+      - name: my-registry
 
 
