@@ -17,4 +17,7 @@ spec:
         image: ironjin92/my-registry:latest
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+        - name: docker-registry
+
 
