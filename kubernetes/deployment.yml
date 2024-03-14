@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: success-app
+  name: django-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: success-app
+      app: django-app
   template:
     metadata:
       labels:
-        app: success-app
+        app: django-app
     spec:
       containers:
-      - name: success-app
+      - name: django-app
         image: ironjin92/my-registry:latest
         ports:
         - containerPort: 8000
